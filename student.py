@@ -167,17 +167,18 @@ class Student:
                 gender_label = Label(class_student_frame, text="Gender:", font=("times new roman", 12, "bold"), bg="white")
                 gender_label.grid(row=2, column=0, padx=10, pady=5, sticky=W)
 
-                gender_entry = ttk.Combobox(class_student_frame, font=("times new roman", 12, "bold"), state="readonly", width=18)
+                gender_entry = ttk.Combobox(class_student_frame, textvariable=self.var_gender, font=("times new roman", 12, "bold"), state="readonly", width=18)
                 gender_entry["values"] = ("Select gender", "Male", "Female")
-                gender_entry.current()
+                gender_entry.current(0)
                 gender_entry.grid(row=2, column=1, padx=10, pady=5, sticky=W)
+
 
                 #DOB
 
                 dob_label = Label(class_student_frame, text="DOB:", font=("times new roman", 12, "bold"), bg="white")
                 dob_label.grid(row=2, column=2, padx=10, pady=5, sticky=W)
 
-                dob_entry = ttk.Entry(class_student_frame, width=20, font=("times new roman", 12, "bold"))
+                dob_entry = ttk.Entry(class_student_frame,textvariable=self.var_dob, width=20, font=("times new roman", 12, "bold"))
                 dob_entry.grid(row=2, column=3, padx=10, pady=5, sticky=W)
 
                 #Email
@@ -185,7 +186,7 @@ class Student:
                 email_label = Label(class_student_frame, text="Email:", font=("times new roman", 12, "bold"), bg="white")
                 email_label.grid(row=3, column=0, padx=10, pady=5, sticky=W)
 
-                email_entry = ttk.Entry(class_student_frame, width=20, font=("times new roman", 12, "bold"))
+                email_entry = ttk.Entry(class_student_frame, textvariable=self.var_email, width=20, font=("times new roman", 12, "bold"))
                 email_entry.grid(row=3, column=1, padx=10, pady=5, sticky=W)
 
                 #Phone No
@@ -193,7 +194,7 @@ class Student:
                 phone_label = Label(class_student_frame, text="Phone No:", font=("times new roman", 12, "bold"), bg="white")
                 phone_label.grid(row=3, column=2, padx=10, pady=5, sticky=W)
 
-                phone_entry = ttk.Entry(class_student_frame, width=20, font=("times new roman", 12, "bold"))
+                phone_entry = ttk.Entry(class_student_frame, textvariable=self.var_phone, width=20, font=("times new roman", 12, "bold"))
                 phone_entry.grid(row=3, column=3, padx=10, pady=5, sticky=W)
 
                 #Address
@@ -201,7 +202,7 @@ class Student:
                 address_label = Label(class_student_frame, text="Address:", font=("times new roman", 12, "bold"), bg="white")
                 address_label.grid(row=4, column=0, padx=10, pady=5, sticky=W)
 
-                address_entry = ttk.Entry(class_student_frame, width=20, font=("times new roman", 12, "bold"))
+                address_entry = ttk.Entry(class_student_frame,textvariable=self.var_address,width=20, font=("times new roman", 12, "bold"))
                 address_entry.grid(row=4, column=1, padx=10, pady=5, sticky=W)
 
                 #Teacher Name
@@ -209,7 +210,7 @@ class Student:
                 teacher_label = Label(class_student_frame, text="Teacher Name:", font=("times new roman", 12, "bold"), bg="white")
                 teacher_label.grid(row=4, column=2, padx=10, pady=5, sticky=W)
 
-                teacher_entry = ttk.Entry(class_student_frame, width=20, font=("times new roman", 12, "bold"))
+                teacher_entry = ttk.Entry(class_student_frame, textvariable=self.var_teacher, width=20, font=("times new roman", 12, "bold"))
                 teacher_entry.grid(row=4, column=3, padx=10, pady=5, sticky=W)
 
                 #Radio Buttons
@@ -219,7 +220,7 @@ class Student:
                 radiobtn1.grid(row=5, column=0)
 
                 self.var_radio2 = StringVar()
-                radiobtn2 = ttk.Radiobutton(class_student_frame, text="No Photo Sample", value="No")
+                radiobtn2 = ttk.Radiobutton(class_student_frame, textvariable=self.var_radio1, text="No Photo Sample", value="No")
                 radiobtn2.grid(row=5, column=1)
 
                 #Buttons Frame
@@ -437,21 +438,7 @@ class Student:
                                         conn=mysql.connector.connect(host="localhost", username="root", password="", database="face_recognizer")
                                         my_cursor = conn.cursor()
                                         my_cursor.execute("update student set dep=%s, course=%s, year=%s, semester=%s, division=%s, roll=%s, gender=%s, dob=%s, email=%s, phone=%s, address=%s, teacher=%s, photosample=%s where Student_id=%s", (
-                                                self.var_dep.get(),
-                                                self.var_course.get(),
-                                                self.var_year.get(),
-                                                self.var_semester.get(),
-                                                self.var_std_name.get(),
-                                                self.var_div.get(),
-                                                self.var_roll.get(),
-                                                self.var_gender.get(),
-                                                self.var_dob.get(),
-                                                self.var_email.get(),
-                                                self.var_phone.get(),
-                                                self.var_address.get(),
-                                                self.var_teacher.get(),
-                                                self.var_radio1.get(),
-                                                self.var_std_id.get()
+                                                self.var_dep.get(), self.var_course.get(), self.var_year.get(), self.var_semester.get(), self.var_std_id.get(), self.var_std_name.get(), self.var_div.get(), self.var_roll.get(), self.var_gender.get(), self.var_dob.get(), self.var_email.get(), self.var_phone.get(), self.var_address.get(), self.var_teacher.get(), self.var_radio1.get()
                                         ))
 
                                 else:
@@ -473,7 +460,7 @@ class Student:
 
                 else:
                         try:
-                                delete=messagebox.askyesno("Student Delete Page", "Do you want to delete this student?", parent=root)
+                                delete=messagebox.askyesno("Student Delete Page", "Do you want to delete this student?", parent=self.root)
                                 if delete>0:
                                         conn=mysql.connector.connect(host="localhost", username="root", password="", database="face_recognizer")
                                         my_cursor = conn.cursor()
@@ -517,7 +504,7 @@ class Student:
         #===================Generate Dataset of ====================
 
         def generate_dataset(self):
-                if self.var_dep.get()=="Select Department" or self.var_std_name.get()=="" or self.var_std_id:
+                if self.var_dep.get()=="Select Department" or self.var_std_name.get()=="" or not self.var_std_id.get():
                         messagebox.showerror("Error", "All Fields are required", parent=self.root)
                 else:
                         try:

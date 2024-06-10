@@ -62,6 +62,9 @@ class Train:
         cv2.destroyAllWindows()
         messagebox.showinfo("Result", "Training datasets completed!!")
 
+
+        
+
 if __name__ == "__main__":
     root = Tk()
     obj = Train(root)
