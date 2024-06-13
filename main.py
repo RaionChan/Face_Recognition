@@ -18,7 +18,7 @@ class Face_Recognition_System:
 
 
         #image 1
-                img=Image.open(r".\\images\\pink.jpg")
+                img=Image.open(r".\\images\\pink.jpeg")
                 img1=img.resize((640,150), Image.LANCZOS)
                 self.photoimg1=ImageTk.PhotoImage(img1)
 
@@ -34,7 +34,7 @@ class Face_Recognition_System:
                 f_lbl2.place(x=640, y=0, width=640, height=130)
 
         #image 3
-                img3=Image.open(r".\\images\\pink.jpg")
+                img3=Image.open(r".\\images\\pink.jpeg")
                 img3=img3.resize((640,130), Image.LANCZOS)
                 self.photoimg3=ImageTk.PhotoImage(img3)
 

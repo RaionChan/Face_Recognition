@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import Label, Frame
 from PIL import Image, ImageTk
 
-class DeveloperApp:
+class Developer:
     def __init__(self, root):
         self.root = root
         self.root.geometry("1920x1080")
@@ -89,5 +89,5 @@ class DeveloperApp:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    app = DeveloperApp(root)
+    app = Developer(root)
     root.mainloop()
