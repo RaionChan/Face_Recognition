@@ -16,10 +16,10 @@ class Train:
         self.root.geometry("1920x1080+0+0")
         self.root.title("Face Recognition System")
 
-        title_lbl = Label(self.root, text="TRAIN DATA SET", font=("times new roman",35,"bold"), bg="white", fg="red")
+        title_lbl = Label(self.root, text="TRAIN DATA SET", font=("times new roman",35,"bold"), bg="white", fg="navyblue")
         title_lbl.place(x=0, y=0, width=1920, height=45)
 
-        img_top = Image.open(r"images\\traindata.jpeg")
+        img_top = Image.open(r"images\\pink.jpeg")
         img_top = img_top.resize((1920,1035))
         self.photoimg_top = ImageTk.PhotoImage(img_top)
 

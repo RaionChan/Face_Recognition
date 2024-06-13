@@ -37,7 +37,7 @@ class Student:
 
 
        #image 1
-                img=Image.open(r".\\images\\pink.jpg")
+                img=Image.open(r".\\images\\pink.jpeg")
                 img1=img.resize((640,150), Image.LANCZOS)
                 self.photoimg1=ImageTk.PhotoImage(img1)
 
@@ -53,7 +53,7 @@ class Student:
                 f_lbl2.place(x=640, y=0, width=640, height=130)
 
         #image 3
-                img3=Image.open(r".\\images\\pink.jpg")
+                img3=Image.open(r".\\images\\pink.jpeg")
                 img3=img3.resize((640,130), Image.LANCZOS)
                 self.photoimg3=ImageTk.PhotoImage(img3)
 
@@ -82,13 +82,13 @@ class Student:
                 Left_frame = LabelFrame(main_frame, bd=2, bg="white", relief=RIDGE, text="Student Details", font=("times new roman", 12, "bold"))
                 Left_frame.place(x=10, y=10, width=920, height=750)
 
-                img_left = Image.open(r".\\images\\pink.jpg")
+                img_left = Image.open(r".\\images\\pink.jpeg")
                 img_left = img_left.resize((960,130))
                 self.photoimg_left = ImageTk.PhotoImage(img_left)
 
 
                 #current course information
-                current_course_frame = LabelFrame(Left_frame, bd=2, bg="#fde4f2", relief=RIDGE, text="Current Course Information", font=("times new roman", 12, "bold"))
+                current_course_frame = LabelFrame(Left_frame, bd=2, bg="#b3cde0", relief=RIDGE, text="Current Course Information", font=("times new roman", 12, "bold"))
                 current_course_frame.place(x=10, y=15, width=890, height=150)
 
                 #Department
@@ -96,7 +96,7 @@ class Student:
                 dep_label.grid(row=0, column=0, padx=10, sticky=W)
 
                 dep_combo = ttk.Combobox(current_course_frame, textvariable=self.var_dep, font=("times new roman", 12, "bold"), state="readonly")
-                dep_combo["values"] = ("Select Department", "Computer", "IT", "Civil", "Mechanical")
+                dep_combo["values"] = ("Select Department", "Informatics", "Electrical", "Civil", "Mechanical")
                 dep_combo.current(0)
                 dep_combo.grid(row=0, column=1, padx=20, pady=10, sticky=W)
 
@@ -105,7 +105,7 @@ class Student:
                 course_label.grid(row=0, column=2, padx=10, sticky=W)
 
                 course_combo = ttk.Combobox(current_course_frame, textvariable=self.var_course, font=("times new roman", 12, "bold"), state="readonly")
-                course_combo["values"] = ("Select Course", "FE", "SE", "TE", "BE")
+                course_combo["values"] = ("Select Course", "OOP", "AI", "Calculus", "Web Development")
                 course_combo.current(0)
 
                 course_combo.grid(row=0, column=3, padx=20, pady=10, sticky=W)
@@ -115,7 +115,7 @@ class Student:
                 year_label.grid(row=1, column=0, padx=10, sticky=W)
 
                 year_combo = ttk.Combobox(current_course_frame, textvariable=self.var_year, font=("times new roman", 12, "bold"), state="readonly")
-                year_combo["values"] = ("Select Year", "2020-21", "2021-22", "2022-23", "2023-24")
+                year_combo["values"] = ("Select Year", "2018", "2019", "2020", "2021", "2022", "2023")
                 year_combo.current(0)
                 year_combo.grid(row=1, column=1, padx=20, pady=10, sticky=W)
 
@@ -124,18 +124,18 @@ class Student:
                 semester_label.grid(row=1, column=2, padx=10, sticky=W)
 
                 semester_combo = ttk.Combobox(current_course_frame, textvariable=self.var_semester, font=("times new roman", 12, "bold"), state="readonly")
-                semester_combo["values"] = ("Select Semester", "1", "2", "3", "4", "5", "6", "7", "8")
+                semester_combo["values"] = ("Select Semester", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14")
                 semester_combo.current(0)
                 semester_combo.grid(row=1, column=3, padx=20, pady=10, sticky=W)
 
 
                 #Class Student Information
-                class_student_frame = LabelFrame(Left_frame, bd=2, bg="#fde4f2", relief=RIDGE, text="Class Student Information", font=("times new roman", 12, "bold"))
+                class_student_frame = LabelFrame(Left_frame, bd=2, bg="#b3cde0", relief=RIDGE, text="Class Student Information", font=("times new roman", 12, "bold"))
                 class_student_frame.place(x=10, y=200, width=890, height=335)
 
                 #Student id
 
-                studentID_label = Label(class_student_frame, text="Student ID:", font=("times new roman", 12, "bold"), bg="white")
+                studentID_label = Label(class_student_frame, text="ID:", font=("times new roman", 12, "bold"), bg="white")
                 studentID_label.grid(row=0, column=0, padx=10, pady=5, sticky=W)
 
                 studentID_entry = ttk.Entry(class_student_frame, textvariable=self.var_std_id, width=20, font=("times new roman", 12, "bold"))
@@ -235,7 +235,7 @@ class Student:
 
 
 
-                photo_frame = LabelFrame(Left_frame, bd=2, bg="#fde4f2", relief=RIDGE, text="Button", font=("times new roman", 12, "bold"))
+                photo_frame = LabelFrame(Left_frame, bd=2, bg="#b3cde0", relief=RIDGE, text="Button", font=("times new roman", 12, "bold"))
                 photo_frame.place(x=15, y=565, width=880, height=75)
 
                 take_photo_btn = Button(photo_frame, command=self.generate_dataset, text="Take Photo Sample", font=("times new roman", 12, "bold"), bg="navy", fg="white", width=36)
@@ -246,7 +246,7 @@ class Student:
 
 
                 #Frame Button
-                btn_frame = LabelFrame(Left_frame, bd=2, bg="#fde4f2", relief=RIDGE, font=("times new roman", 12, "bold"))
+                btn_frame = LabelFrame(Left_frame, bd=2, bg="#b3cde0", relief=RIDGE, font=("times new roman", 12, "bold"))
                 btn_frame.place(x=15, y=640, width=880, height=65)
 
                 save_btn = Button(btn_frame, command=self.add_data, text="Save",  font=("times new roman", 12, "bold"), bg="blue", fg="white", width=18)
@@ -293,7 +293,7 @@ class Student:
                 search_frame = LabelFrame(Right_frame, bd=2, bg="white", relief=RIDGE, text="Search System", font=("times new roman", 12, "bold"))
                 search_frame.place(x=10, y=135, width=890, height=80)
 
-                search_label = Label(search_frame, text="Search By:", font=("times new roman", 12, "bold"), bg="red")
+                search_label = Label(search_frame, text="Search By:", font=("times new roman", 12, "bold"), bg="grey")
                 search_label.grid(row=0, column=0, padx=10, sticky=W)
 
                 search_combo = ttk.Combobox(search_frame, font=("times new roman", 12, "bold"), state="readonly")
@@ -583,24 +583,23 @@ class Student:
                                 for x in myresult:
                                         id+=1
 
-                                my_cursor.execute("update student set Student_id=%s, Dep=%s, course=%s, Year=%s, Semester=%s, Name=%s, Division=%s, Npm=%s, Gender=%s, Dob=%s, Email=%s, Phone=%s, Address=%s, Teacher=%s where Student_id=%s", (
-                                        self.var_std_id.get(),
-                                        self.var_dep.get(),
-                                        self.var_course.get(),
-                                        self.var_year.get(),
-                                        self.var_semester.get(),
-                                        self.var_std_name.get(),
-                                        self.var_div.get(),
-                                        self.var_npm.get(),
-                                        self.var_gender.get(),
-                                        self.var_dob.get(),
-                                        self.var_email.get(),
-                                        self.var_phone.get(),
-                                        self.var_address.get(),
-                                        self.var_teacher.get(),
-                                        # self.var_radio1.get(),
-                                        self.var_std_id.get()
-                                ))
+                                        my_cursor.execute("update student set Student_id=%s, Dep=%s, course=%s, Year=%s, Semester=%s, Name=%s, Division=%s, Npm=%s, Gender=%s, Dob=%s, Email=%s, Phone=%s, Address=%s, Teacher=%s where Student_id=%s", (
+                                                self.var_std_id.get(),
+                                                self.var_dep.get(),
+                                                self.var_course.get(),
+                                                self.var_year.get(),
+                                                self.var_semester.get(),
+                                                self.var_std_name.get(),
+                                                self.var_div.get(),
+                                                self.var_npm.get(),
+                                                self.var_gender.get(),
+                                                self.var_dob.get(),
+                                                self.var_email.get(),
+                                                self.var_phone.get(),
+                                                self.var_address.get(),
+                                                self.var_teacher.get(),
+                                                self.var_std_id.get()
+                                        ))
                                 conn.commit()
                                 self.fetch_data()
                                 self.reset_data()

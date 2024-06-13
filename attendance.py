@@ -126,16 +126,16 @@ class Attendance:
         btn_frame = Frame(left_inside_frame, bd=2, relief=RIDGE, bg="white")
         btn_frame.place(x=0, y=300, width=810, height=35)
 
-        save_btn = Button(btn_frame, text="Import CSV", command=self.importCsv, width=15, font=("times new roman", 13, "bold"), bg="blue", fg="white")
+        save_btn = Button(btn_frame, text="Import CSV", command=self.importCsv, width=20, font=("times new roman", 13, "bold"), bg="blue", fg="white")
         save_btn.grid(row=0, column=0)
 
-        export_btn = Button(btn_frame, text="Export CSV", command=self.exportCsv, width=15, font=("times new roman", 13, "bold"), bg="blue", fg="white")
+        export_btn = Button(btn_frame, text="Export CSV", command=self.exportCsv, width=20, font=("times new roman", 13, "bold"), bg="blue", fg="white")
         export_btn.grid(row=0, column=1)
 
-        update_btn = Button(btn_frame, text="Update", width=15, command=self.update_data, font=("times new roman", 13, "bold"), bg="blue", fg="white")
-        update_btn.grid(row=0, column=2)
+        # update_btn = Button(btn_frame, text="Update", width=15, command=self.update_data, font=("times new roman", 13, "bold"), bg="blue", fg="white")
+        # update_btn.grid(row=0, column=2)
 
-        reset_btn = Button(btn_frame, text="Reset", command=self.reset_data, width=14, font=("times new roman", 13, "bold"), bg="blue", fg="white")
+        reset_btn = Button(btn_frame, text="Reset", command=self.reset_data, width=20, font=("times new roman", 13, "bold"), bg="blue", fg="white")
         reset_btn.grid(row=0, column=3)
 
         img_left2 = Image.open(r".\\images\\bg.jpg")
