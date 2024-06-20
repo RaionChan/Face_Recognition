@@ -24,12 +24,12 @@ Our face recognition attendance system is designed to recognize and record the a
 
 1. **Clone the repository:**
     ```sh
-    git clone https://github.com/your-username/face-recognition-attendance.git
+    git clone https://github.com/RaionChan/Face_Recognition/
     ```
 
 2. **Navigate to the project directory:**
     ```sh
-    cd face-recognition-attendance
+    cd Face_Recognition
     ```
 
 3. **Install the required dependencies:**
