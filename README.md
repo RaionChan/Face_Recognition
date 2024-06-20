@@ -60,25 +60,6 @@ Our face recognition attendance system is designed to recognize and record the a
 2. **Face Recognition:** Detected faces are compared against a database of known faces using feature matching techniques. 🔐
 3. **Attendance Logging:** If a face is recognized, the attendance is logged with the current date and time. 🕒
 
-## Contributing 🤝
-
-We welcome contributions to improve our project! Here’s how you can help:
-
-1. **Fork the repository** 🍴
-2. **Create a new branch:**
-    ```sh
-    git checkout -b feature/YourFeature
-    ```
-3. **Make your changes and commit them:**
-    ```sh
-    git commit -m 'Add some feature'
-    ```
-4. **Push to the branch:**
-    ```sh
-    git push origin feature/YourFeature
-    ```
-5. **Submit a pull request** 📥
-
 ## Acknowledgements 🙏
 
 Special thanks to all the contributors and the amazing libraries that made this project possible. 🌟
