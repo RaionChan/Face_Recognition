@@ -37,6 +37,9 @@ Our face recognition attendance system is designed to recognize and record the a
     pip install -r requirements.txt
     ```
 
+4. **Make the database**
+   
+
 ## Usage 🚀
 
 1. **Run the application:**
